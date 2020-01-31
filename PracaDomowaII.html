@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WIN YOUR DREAM JOURNEY</title>
+    
+<style>
+
+#body{
+    background-image:url("cloud.png");;
+    width:100%;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#header {
+    background-image: url("plane.png");
+    font: 14px 'CplaborateLightRegular',Copperplate Gothic Light,cursive;
+    background-position: 15% 25%;
+    background-size: 300px;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-style: italic;     
+}
+th, td, p, input {
+            font:14px 'CplaborateLightRegular',Copperplate Gothic Light,cursive;
+        }
+table, th, td 
+        {
+            border: solid 3px rgb(106, 216, 250);
+            background-color: rgb(201, 236, 247);
+            border-collapse: collapse;
+            padding: 20px 10px 15px;
+            text-align: center;
+            width:100%
+        }
+th {
+            font-weight:bold;
+        }
+#signup .indent label.error{
+    margin-left: 0;
+}
+#i_left{
+    width: 125px;
+    padding: -10px 20px 0 20px;
+    position: absolute;
+    left: 25px;
+    z-index: 80; 
+}
+#i_right{
+    padding: -10px 20px 0 20px;
+    position: absolute;
+    right: 25px;
+    z-index: 80;
+}
+#dashboard {
+    width: 125px;
+    background-color:  rgb(27, 142, 209);
+    padding: 20px 20px 0 20px;
+    position: absolute;
+    left: -137px;
+    z-index: 120;
+    border: 3px dashed  rgb(106, 216, 250);
+}
+#dashboard1 {
+    width: 125px;
+    background-color:  rgb(27, 142, 209);
+    padding: 20px 10px 10px 20px;
+    position: absolute;
+    right: -137px;
+    z-index: 120;
+    border: 3px dashed  rgb(106, 216, 250);
+}
+#dashboard img {
+    margin-bottom: 15px;
+    border: 3px dashed  rgb(106, 216, 250);
+}
+#dashboard1 img {
+    margin-bottom: 15px;
+    border: 3px dashed  rgb(106, 216, 250);
+    background-color: white;
+}
+#content{
+    margin-left: auto;
+    margin-right: auto;
+    width:650px;
+	height: 100px;  
+}
+#chess{
+    margin-left: auto;
+    margin-right: auto;
+    width:400px;
+	height: 100px;  
+}
+#title{
+    font: 20px 'CplaborateLightRegular',Copperplate Gothic Light,cursive;
+    text-align: center; 
+}
+#lname, #lpassword, #lemail, #confirmp, #lcountry, #lbirth, #name, #email, #password, #confirm_password, #dob, #country, #comments, #lcomments{
+    width: 100%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    box-sizing:border-box;
+}
+#navig {
+    margin-left: auto;
+    margin-right: auto;
+    width:650px;
+    height: 100px;
+    font: 15px 'CplaborateLightRegular',Copperplate Gothic Light,cursive;
+}
+#navigation ul, #navigation li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+#navigation a:hover {
+    background-color: rgb(106, 216, 250);
+    text-align: center;
+    font-style: bold;
+    font: 15px 'CplaborateLightRegular',Copperplate Gothic Light,cursive;
+    border-top: 3px dashed rgb(27, 142, 209);
+    border-left: 3px dashed rgb(27, 142, 209);
+    border-right: 3px dashed rgb(27, 142, 209);
+    border-bottom: 3px dashed rgb(27, 142, 209);
+    color:  rgb(27, 142, 209);
+}
+#navigation a{
+    background-color: rgb(106, 216, 250);
+    text-align: center;
+    font-style: bold;
+    text-decoration:solid;
+    font: 15px 'CplaborateLightRegular',Copperplate Gothic Light,cursive;
+    border-top: 3px dashed  rgb(106, 216, 250);
+    border-left: 3px dashed rgb(106, 216, 250);
+    border-right: 3px dashed  rgb(106, 216, 250);
+    border-bottom: 3px dashed rgb(106, 216, 250);
+    background-color:   rgb(27, 142, 209);
+    color: white;
+}
+
+</style>
+<script src="jquery-1.6.3.min.js"></script>
+<script src="jquery.easing.1.3.js"></script>
+<script src="jquery.color.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script src="nav1.1.min.js"></script>
+<script src="sweetalert.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('#dashboard').hover(
+        function(){
+            $(this).stop().animate(
+                {   left:"0",
+                    backgroundColor:"rgb(27, 142, 209)"
+                },
+                500,
+                "easeInSine"
+            );
+        },
+        function(){
+            $(this).stop().animate(
+                {left:"-137px",
+                backgroundColor:"rgb(27, 142, 209)"},
+                1500,
+                'easeOutBounce'
+            );
+        }
+    );
+});
+$(document).ready(function(){
+    $('#dashboard1').hover(
+        function(){
+            $(this).stop().animate(
+                {   right:"0",
+                    backgroundColor:"rgb(27, 142, 209)"
+                },
+                500,
+                "easeInSine"
+            );
+        },
+        function(){
+            $(this).stop().animate(
+                {right:"-137px",
+                backgroundColor:"rgb(27, 142, 209)"},
+                1500,
+                'easeOutBounce'
+            );
+        }
+    );
+});
+$(document).ready(function(){
+    $("#navigation").navPlugin({
+        'itemWidth':200,
+        'itemHeight': 30,
+        'navEffect': "slide",
+        'speed':250
+    });
+});
+$(document).ready(function(){
+    $('#signup').validate({
+
+        rules:{
+            email:{
+                required:true,
+                email: true
+            },
+            password:{
+                required:true,
+                rangelength:[8,16]
+            },
+            confirm_password:{
+                equalTo:'#password'
+            },
+            spam:'required'
+        },
+
+        messages:{
+            email:{
+                required:"Fill with your e-mail",
+                email:"You made some mistake"
+            },
+            password:{
+                required:"Enter the password",
+                rangelength:"Password has to have from 8 do 16 signs."
+            },
+            confirm_password:{
+                equalTo:"Passwords do not match"
+            }
+        },
+        errorPlacement:function(error, element){
+            if (element.is(":radio")||element.is(":checkbox")){
+                error.appendTo(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        }
+
+    });
+});
+window.addEventListener('load', function(){
+    var bprompt = document.getElementById('prompt');
+
+    bprompt.addEventListener('click', function(){
+        swal({
+        title: "Are you sure?",
+        text: "Once sent, you will not be able to change picked destination!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Great! Now cross your fingers!", {
+                    icon: "success",
+                });
+            } else {
+            swal("You have to be sure about your decision!");
+    }
+});
+    })
+});
+window.onload= function(){
+    var myJSON = '{"places":["Venice","Paris","Florence","Rome","France","Italy","UK","Lyon","Nice","Cardiff","London","Edinburgh"]}';
+
+obj = JSON.parse(myJSON);
+document.getElementById("v").innerHTML = obj.places[0];
+document.getElementById("p").innerHTML = obj.places[1];
+document.getElementById("f").innerHTML = obj.places[2];
+document.getElementById("r").innerHTML = obj.places[3];
+document.getElementById("fr").innerHTML = obj.places[4];
+document.getElementById("i").innerHTML = obj.places[5];
+document.getElementById("u").innerHTML = obj.places[6];
+document.getElementById("l").innerHTML = obj.places[7];
+document.getElementById("n").innerHTML = obj.places[8];
+document.getElementById("c").innerHTML = obj.places[9];
+document.getElementById("lo").innerHTML = obj.places[10];
+document.getElementById("e").innerHTML = obj.places[11];
+
+        var images = document.getElementsByTagName("img");
+            for (var i=0; i<images.length; i++){
+                images[i].onclick=showAnswer;
+        }
+           
+        };
+        function showAnswer(eventObj){
+            var image = eventObj.target;
+            var name = image.id;
+            name=name+"x.png";
+            image.src=name;
+
+            setTimeout(reblur, 5000, image);
+        }
+        function reblur(image){
+            var name = image.id;
+            
+            image.src="chess.png";
+        }
+
+function CreateTableFromJSON() {
+        var week = [
+            {
+                "Time": "12:00",
+                "Monday": "Free",
+                "Tuesday": "Venice",
+                "Wednsday": "Paris",
+                "Thursday": "London",
+                "Friday": "Rome",
+            },
+            {
+                "Time": "13:30",
+                "Monday": "Italy",
+                "Tuesday": "France",
+                "Wednsday": "Free",
+                "Thursday": "Free",
+                "Friday": "United Kingdom",
+            },
+            {
+                "Time": "15:00",
+                "Monday": "Florence",
+                "Tuesday": "Lyon",
+                "Wednsday": "Nice",
+                "Thursday": "Cardiff",
+                "Friday": "Free",
+            },
+
+        ]
+        var col = [];
+        for (var i = 0; i < week.length; i++) {
+            for (var key in week[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+        var table = document.createElement("table");
+
+        var tr = table.insertRow(-1);                   
+
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");      
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+
+        for (var i = 0; i < week.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = week[i][col[j]];
+            }
+        }
+
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    }
+
+</script>
+</head>
+
+<body id="body">
+<div id="wrapper">
+    <div id="header">
+        <h1>Travelling...<br><br>That is the dream!</h1>            
+    </div>
+<div id="navig">
+    <h3>Take part in contest and get chance to see the biggest cities of...</h3>
+    <ul id="navigation">
+        <li><a href ="#">Italy</a>
+        <ul>
+            <li><a href ="https://en.wikipedia.org/wiki/Venice" target="_blank">Venice</a></li>
+            <li><a href ="https://en.wikipedia.org/wiki/Florence" target="_blank">Florence</a></li>
+            <li><a href ="https://en.wikipedia.org/wiki/Siena" target="_blank">Rome</a></li>
+        </ul>
+        </li>
+        <li><a href ="#">France</a>
+        <ul>
+            <li><a href ="https://simple.wikipedia.org/wiki/Paris" target="_blank">Paris</a></li>
+            <li><a href ="https://simple.wikipedia.org/wiki/Lyon" target="_blank">Lyon</a></li>
+            <li><a href ="https://simple.wikipedia.org/wiki/Nice" target="_blank">Nice</a></li>
+        </ul>
+        </li>
+        <li><a href ="#">United Kingdom</a>
+            <ul>
+                <li><a href ="https://en.wikipedia.org/wiki/London" target="_blank">London</a></li>
+                <li><a href ="https://en.wikipedia.org/wiki/Edinburgh" target="_blank">Edinburgh</a></li>
+                <li><a href ="https://en.wikipedia.org/wiki/Cardiff" target="_blank">Cardiff</a></li>
+            </ul>
+            </li>
+    </ul>
+</div>
+<div id="dashboard">
+    <img src="i_map.png" width="110" height="110" alt="blue">
+    <img src="f_map.png" width="110" height="110" alt="blue">
+    <img src="u_map.png" width="110" height="110" alt="blue">
+</div>
+<div id="dashboard1">
+    <img src="i_capitol.png" width="110" height="110" alt="blue">
+    <img src="f_capitol.png" width="110" height="110" alt="blue">
+    <img src="u_capitol.png" width="110" height="110" alt="blue">
+</div>
+
+<div id="content">
+    <div class="main">
+        <h1 id="title">Fill and send the form to win one of the journey!</h1>
+        <form action="process.html" method="POST" name="signup" id="signup">
+            <div>
+                <label for="name" class="label" id="lname">Name and surname</label>
+                <input name="name" type="text" class="required" id="name" title="Enter your name and surname">
+            </div>
+
+            <div>
+                <label for="email" class="label" id="lemail">E-mail</label>
+                <input name="email" type="text" id="email">
+            </div>
+
+            <div>
+                <label for="password" class="label" id="lpassword">Password</label>
+                <input name="password" type="password" id="password" >
+            </div>
+
+            <div>
+                <label for="confirm_password" class="label" id="confirmp">Confirm password</label>
+                <input name="confirm_password" type="password" id="confirm_password">
+            </div>
+
+            <div>
+                <label for="dob" class="label" id="lbirth">Birth date</label>
+                <input name="dob" type="text" id="dob" class="date" title="Enter your birth date like 01/01/2000">
+            </div>
+            <div>
+                <label for="planet" class="label" id="lcountry">Country</label>
+                <select name="planet" id="country" class="required" title="Pick one">
+                    <option value="">Italy</option>
+                    <option value="">France</option>
+                    <option value="">United Kingdom</option>
+                </select>
+            </div>
+            <div>
+                <label for="comments" class="label" id="lcomments">Write why you pick this country</label>
+                <textarea name="comments" cols="15" rows="5" id="comments"></textarea>
+            </div>
+                <input type="submit" name="submit" id="prompt" value="Send"/>
+                <br><br>
+                <br><br>
+            </div>
+        </form>
+        <div id="i_left">
+            <img id="zero" src="chess.png" width="350" height="350">
+          </div>
+          <div id="i_right">
+            <img id="two" src="chess.png" width="350" height="350">
+          </div>
+
+        <table id="table" style="width:100%">
+            <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th> 
+              <th>Wednesday</th>
+              <th>Thursday</th> 
+              <th>Friday</th>
+            </tr>
+            <tr>
+              <td>12:00</td>
+              <td id="v"></td>
+              <td id="p"></td>
+              <td id="f"></td>
+              <td id="r"></td>
+              <td id="fr"></td>
+            </tr>
+            <tr>
+              <td>13:30</td>
+              <td id="i"></td>
+              <td id="u"></td>
+              <td id="l"></td>
+              <td id="n"></td>
+              <td id="c"></td>
+            </tr>
+            <tr>
+              <td>15:00</td>
+              <td id="lo"></td>
+              <td id="e"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+          <br><br>
+
+          <input type="button" onclick="CreateTableFromJSON()" value="Another table" />
+          <p id="showData"></p>
+          <div id="chess">
+          
+            <img id="one" src="chess.png" width="350" height="350">
+            
+          </div>
+         
+    </div> 
+
+     
+</div>
+</div>
+
+</body>
+</html>
